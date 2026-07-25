@@ -70,3 +70,20 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Android signing (nunca versionar chaves de assinatura)
+*.keystore
+*.jks
+keystore.properties
+
+# IDEs
+.idea/
+.vscode/
+*.csproj.user
+
+# Sistema operacional
+.DS_Store
+.AppleDouble
+Thumbs.db
+ehthumbs.db
+desktop.ini

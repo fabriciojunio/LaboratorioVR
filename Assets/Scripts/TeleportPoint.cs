@@ -12,8 +12,10 @@ public class TeleportPoint : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         if (rend != null) corOriginal = rend.material.color;
-        if (cameraRig == null)
+        if (cameraRig == null && Camera.main != null)
             cameraRig = Camera.main.transform;
+        if (cameraRig == null)
+            Debug.LogWarning("TeleportPoint sem cameraRig e sem Camera.main na cena; o teletransporte ficara inativo.", this);
     }
 
     public void IniciarOlhar()
@@ -35,6 +37,7 @@ public class TeleportPoint : MonoBehaviour
 
     void Teleportar()
     {
+        if (cameraRig == null) return;
         cameraRig.position = new Vector3(
             transform.position.x,
             cameraRig.position.y,
